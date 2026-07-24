@@ -261,3 +261,68 @@ font-size:15px;
 margin-top:70px;
 border-top:1px solid rgba(255,255,255,.06);
 }
+
+/* ---------- Mobile Responsive ---------- */
+
+@media (max-width:768px){
+
+nav{
+    padding:15px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+}
+
+.logo h2{
+    font-size:20px;
+    line-height:1.2;
+}
+
+nav ul{
+    width:100%;
+    justify-content:center;
+    margin-top:15px;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero{
+    padding:120px 20px 80px;
+}
+
+.hero-logo{
+    width:180px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.services-grid{
+    grid-template-columns:1fr;
+}
+
+.brand-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+}
