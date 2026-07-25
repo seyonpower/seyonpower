@@ -838,7 +838,7 @@
     <div class="form-card">
       <h3>Send an Enquiry</h3>
       <p class="sub">Fill in your details and we'll get back to you shortly.</p>
-      <form onsubmit="event.preventDefault(); alert('Thank you! Your enquiry has been received. We will contact you shortly.'); this.reset();">
+      <form onsubmit="event.preventDefault(); var name=document.getElementById('name').value; var phone=document.getElementById('phone').value; var email=document.getElementById('email').value; var service=document.getElementById('service').value; var msg=document.getElementById('msg').value; var text='New Enquiry - SEYON POWER SOLUTIONS%0A%0AName: '+name+'%0APhone: '+phone+'%0AEmail: '+email+'%0AService: '+service+'%0AMessage: '+msg; window.open('https://wa.me/917338803111?text='+text, '_blank'); this.reset();">
         <div class="form-grid">
           <div>
             <label for="name">Full Name</label>
