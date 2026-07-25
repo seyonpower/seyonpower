@@ -290,6 +290,11 @@
     padding:14px 26px; border-radius:100px; font-weight:600; font-size:0.95rem; white-space:nowrap;
     color:var(--cream);
   }
+  .brand-chip.logo-chip{
+    background:#fff; border:1px solid rgba(251,247,238,0.15);
+    padding:12px 24px; height:62px; display:flex; align-items:center; justify-content:center;
+  }
+  .brand-chip.logo-chip img{height:100%; width:auto; max-width:150px; object-fit:contain; display:block;}
   .brand-label{font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-light); margin:34px 0 14px; font-weight:700;}
 
   /* ---------- Why us ---------- */
@@ -929,13 +934,38 @@
 
 <script>
   // Brand marquees
-  const inverterBrands = ["Microtek","Exide","Amaron","Luminous","SF Batteries","Crompton","V-Guard","Livguard","Okaya","Eastman"];
-  const batteryBrands = ["Exide","Amaron","Microtek","Okaya","Luminous","Eastman","Solar Battery","SMF Battery","Lithium-ion Battery"];
+  const inverterBrands = [
+    {name:"Microtek", logo:"microtek.png"},
+    {name:"Exide", logo:"exide.png"},
+    {name:"Amaron", logo:"amaron.png"},
+    {name:"Luminous", logo:"luminous.png"},
+    {name:"SF Batteries", logo:"sf.png"},
+    {name:"Crompton", logo:"crompton.png"},
+    {name:"V-Guard", logo:"vguard.png"},
+    {name:"Livguard", logo:"livguard.png"},
+    {name:"Okaya", logo:"okaya.png"},
+    {name:"Eastman", logo:"eastman.png"}
+  ];
+  const batteryBrands = [
+    {name:"Exide", logo:"exide.png"},
+    {name:"Amaron", logo:"amaron.png"},
+    {name:"Microtek", logo:"microtek.png"},
+    {name:"Okaya", logo:"okaya.png"},
+    {name:"Luminous", logo:"luminous.png"},
+    {name:"Eastman", logo:"eastman.png"},
+    {name:"Solar Battery"},
+    {name:"SMF Battery"},
+    {name:"Lithium-ion Battery"}
+  ];
 
   function fillMarquee(id, items){
     const track = document.getElementById(id);
     const doubled = [...items, ...items];
-    track.innerHTML = doubled.map(b => `<div class="brand-chip">${b}</div>`).join('');
+    track.innerHTML = doubled.map(b =>
+      b.logo
+        ? `<div class="brand-chip logo-chip"><img src="${b.logo}" alt="${b.name}"></div>`
+        : `<div class="brand-chip">${b.name}</div>`
+    ).join('');
   }
   fillMarquee('track1', inverterBrands);
   fillMarquee('track2', batteryBrands);
